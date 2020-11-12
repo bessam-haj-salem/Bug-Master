@@ -1,0 +1,78 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createModels = void 0;
+const sequelize_1 = require("sequelize");
+const Test_1 = require("./Test");
+const Hotel_1 = require("./Hotel");
+const Image_1 = require("./Image");
+const Aeroport_1 = require("./Aeroport");
+const Vehicule_1 = require("./Vehicule");
+const Prix_1 = require("./Prix");
+//************api rafahia*****************
+const ClientCompany_1 = require("./ClientCompany");
+const Trip_1 = require("./Trip");
+const Driver_1 = require("./Driver");
+const UsualCustomer_1 = require("./UsualCustomer");
+const Passeport_1 = require("./Passeport");
+const PersonalGroup_1 = require("./PersonalGroup");
+const Price_1 = require("./Price");
+const VehiculeFleet_1 = require("./VehiculeFleet");
+const PassengerLuggage_1 = require("./PassengerLuggage");
+const ProformaInvoice_1 = require("./ProformaInvoice");
+const Stopover_1 = require("./Stopover");
+const TechnicalInspection_1 = require("./TechnicalInspection");
+const VehiculeInsurance_1 = require("./VehiculeInsurance");
+const VehiculeMaintenance_1 = require("./VehiculeMaintenance");
+const Tva_1 = require("./Tva");
+const TripDriver_1 = require("./TripDriver");
+const TripClientCompany_1 = require("./TripClientCompany");
+const TradeMargin_1 = require("./TradeMargin");
+const Rent_1 = require("./Rent");
+//********************************************************* */
+//sc-26-2020
+//mappage
+//mappage
+//scsc-26-03-2020
+exports.createModels = (sequelizeConfig) => {
+    const { database, username, password, params } = sequelizeConfig;
+    const sequelize = new sequelize_1.Sequelize(database, username, password, params);
+    const db = {
+        sequelize,
+        Sequelize: sequelize_1.Sequelize,
+        //Agence: AgenceFactory(sequelize, Sequelize),
+        Test: Test_1.TestFactory(sequelize, sequelize_1.Sequelize),
+        Hotel: Hotel_1.HotelFactory(sequelize, sequelize_1.Sequelize),
+        Image: Image_1.ImageFactory(sequelize, sequelize_1.Sequelize),
+        Aeroport: Aeroport_1.AeroportFactory(sequelize, sequelize_1.Sequelize),
+        Vehicule: Vehicule_1.VehiculeFactory(sequelize, sequelize_1.Sequelize),
+        Prix: Prix_1.PrixFactory(sequelize, sequelize_1.Sequelize),
+        //***************api rafahia**************** */
+        ClientCompany: ClientCompany_1.ClientCompanyFactory(sequelize, sequelize_1.Sequelize),
+        Trip: Trip_1.TripFactory(sequelize, sequelize_1.Sequelize),
+        Driver: Driver_1.DriverFactory(sequelize, sequelize_1.Sequelize),
+        UsualCustomer: UsualCustomer_1.UsualCustomerFactory(sequelize, sequelize_1.Sequelize),
+        Passeport: Passeport_1.PasseportFactory(sequelize, sequelize_1.Sequelize),
+        PersonalGroup: PersonalGroup_1.PersonalGroupFactory(sequelize, sequelize_1.Sequelize),
+        Price: Price_1.PriceFactory(sequelize, sequelize_1.Sequelize),
+        VehiculeFleet: VehiculeFleet_1.VehiculeFleetFactory(sequelize, sequelize_1.Sequelize),
+        PassengerLuggage: PassengerLuggage_1.PassengerLuggageFactory(sequelize, sequelize_1.Sequelize),
+        ProformaInvoice: ProformaInvoice_1.ProformaInvoiceFactory(sequelize, sequelize_1.Sequelize),
+        Stopover: Stopover_1.StopoverFactory(sequelize, sequelize_1.Sequelize),
+        TechnicalInspection: TechnicalInspection_1.TechnicalInspectionFactory(sequelize, sequelize_1.Sequelize),
+        VehiculeInsurance: VehiculeInsurance_1.VehiculeInsuranceFactory(sequelize, sequelize_1.Sequelize),
+        VehiculeMaintenance: VehiculeMaintenance_1.VehiculeMaintenanceFactory(sequelize, sequelize_1.Sequelize),
+        Tva: Tva_1.TvaFactory(sequelize, sequelize_1.Sequelize),
+        TripDriver: TripDriver_1.TripDriverFactory(sequelize, sequelize_1.Sequelize),
+        TripPassenger: TripDriver_1.TripDriverFactory(sequelize, sequelize_1.Sequelize),
+        TripClientCompany: TripClientCompany_1.TripClientCompanyFactory(sequelize, sequelize_1.Sequelize),
+        TradeMargin: TradeMargin_1.TradeMarginFactory(sequelize, sequelize_1.Sequelize),
+        Rent: Rent_1.RentFactory(sequelize, sequelize_1.Sequelize),
+    };
+    Object.keys(db).forEach((modelName) => {
+        if (db[modelName].associate) {
+            db[modelName].associate(db);
+        }
+    });
+    return db;
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiL3Zhci93d3cvaHRtbC9hcGlfdHJhbnNmZXJzL3NlcnZlci9tb2RlbHMtdHMvaW5kZXgudHMiLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvYXBpX3RyYW5zZmVycy9zZXJ2ZXIvbW9kZWxzLXRzL2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLHlDQUFzQztBQUl0QyxpQ0FBcUM7QUFDckMsbUNBQXVDO0FBQ3ZDLG1DQUF1QztBQUV2Qyx5Q0FBNkM7QUFDN0MseUNBQTZDO0FBQzdDLGlDQUFxQztBQUVyQywwQ0FBMEM7QUFDMUMsbURBQXVEO0FBQ3ZELGlDQUFxQztBQUNyQyxxQ0FBeUM7QUFDekMsbURBQXVEO0FBQ3ZELDJDQUErQztBQUMvQyxtREFBdUQ7QUFDdkQsbUNBQXVDO0FBQ3ZDLG1EQUF1RDtBQUN2RCx5REFBNkQ7QUFDN0QsdURBQTJEO0FBQzNELHlDQUE2QztBQUM3QywrREFBbUU7QUFDbkUsMkRBQStEO0FBQy9ELCtEQUFtRTtBQUNuRSwrQkFBbUM7QUFDbkMsNkNBQWlEO0FBRWpELDJEQUErRDtBQUMvRCwrQ0FBbUQ7QUFDbkQsaUNBQXFDO0FBQ3JDLDhEQUE4RDtBQUM5RCxZQUFZO0FBRVosU0FBUztBQUNULFNBQVM7QUFDVCxpQkFBaUI7QUFFSixRQUFBLFlBQVksR0FBRyxDQUFDLGVBQW9CLEVBQWUsRUFBRTtJQUNoRSxNQUFNLEVBQUUsUUFBUSxFQUFFLFFBQVEsRUFBRSxRQUFRLEVBQUUsTUFBTSxFQUFFLEdBQUcsZUFBZSxDQUFDO0lBQ2pFLE1BQU0sU0FBUyxHQUFHLElBQUkscUJBQVMsQ0FBQyxRQUFRLEVBQUUsUUFBUSxFQUFFLFFBQVEsRUFBRSxNQUFNLENBQUMsQ0FBQztJQUV0RSxNQUFNLEVBQUUsR0FBZ0I7UUFDdEIsU0FBUztRQUNULFNBQVMsRUFBVCxxQkFBUztRQUVULDhDQUE4QztRQUM5QyxJQUFJLEVBQUUsa0JBQVcsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUN2QyxLQUFLLEVBQUUsb0JBQVksQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUN6QyxLQUFLLEVBQUUsb0JBQVksQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUV6QyxRQUFRLEVBQUUsMEJBQWUsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUMvQyxRQUFRLEVBQUUsMEJBQWUsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUMvQyxJQUFJLEVBQUUsa0JBQVcsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUV2QywrQ0FBK0M7UUFDL0MsYUFBYSxFQUFFLG9DQUFvQixDQUFDLFNBQVMsRUFBRSxxQkFBUyxDQUFDO1FBQ3pELElBQUksRUFBRSxrQkFBVyxDQUFDLFNBQVMsRUFBRSxxQkFBUyxDQUFDO1FBQ3ZDLE1BQU0sRUFBRSxzQkFBYSxDQUFDLFNBQVMsRUFBRSxxQkFBUyxDQUFDO1FBQzNDLGFBQWEsRUFBRSxvQ0FBb0IsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUN6RCxTQUFTLEVBQUUsNEJBQWdCLENBQUMsU0FBUyxFQUFFLHFCQUFTLENBQUM7UUFDakQsYUFBYSxFQUFFLG9DQUFvQixDQUFDLFNBQVMsRUFBRSxxQkFBUyxDQUFDO1FBQ3pELEtBQUssRUFBRSxvQkFBWSxDQUFDLFNBQVMsRUFBRSxxQkFBUyxDQUFDO1FBQ3pDLGFBQWEsRUFBRSxvQ0FBb0IsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUN6RCxnQkFBZ0IsRUFBRSwwQ0FBdUIsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUMvRCxlQUFlLEVBQUUsd0NBQXNCLENBQUMsU0FBUyxFQUFFLHFCQUFTLENBQUM7UUFDN0QsUUFBUSxFQUFFLDBCQUFlLENBQUMsU0FBUyxFQUFFLHFCQUFTLENBQUM7UUFDL0MsbUJBQW1CLEVBQUUsZ0RBQTBCLENBQUMsU0FBUyxFQUFFLHFCQUFTLENBQUM7UUFDckUsaUJBQWlCLEVBQUUsNENBQXdCLENBQUMsU0FBUyxFQUFFLHFCQUFTLENBQUM7UUFDakUsbUJBQW1CLEVBQUUsZ0RBQTBCLENBQUMsU0FBUyxFQUFFLHFCQUFTLENBQUM7UUFDckUsR0FBRyxFQUFFLGdCQUFVLENBQUMsU0FBUyxFQUFFLHFCQUFTLENBQUM7UUFDckMsVUFBVSxFQUFFLDhCQUFpQixDQUFDLFNBQVMsRUFBRSxxQkFBUyxDQUFDO1FBQ25ELGFBQWEsRUFBRSw4QkFBaUIsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUN0RCxpQkFBaUIsRUFBRSw0Q0FBd0IsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUNqRSxXQUFXLEVBQUUsZ0NBQWtCLENBQUMsU0FBUyxFQUFFLHFCQUFTLENBQUM7UUFDckQsSUFBSSxFQUFFLGtCQUFXLENBQUMsU0FBUyxFQUFFLHFCQUFTLENBQUM7S0FFeEMsQ0FBQztJQUVGLE1BQU0sQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLENBQUMsT0FBTyxDQUFDLENBQUMsU0FBUyxFQUFFLEVBQUU7UUFDcEMsSUFBSSxFQUFFLENBQUMsU0FBUyxDQUFDLENBQUMsU0FBUyxFQUFFO1lBQzNCLEVBQUUsQ0FBQyxTQUFTLENBQUMsQ0FBQyxTQUFTLENBQUMsRUFBRSxDQUFDLENBQUM7U0FDN0I7SUFDSCxDQUFDLENBQUMsQ0FBQztJQUVILE9BQU8sRUFBRSxDQUFDO0FBQ1osQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgU2VxdWVsaXplIH0gZnJvbSAnc2VxdWVsaXplJztcbmltcG9ydCB7IERiSW50ZXJmYWNlIH0gZnJvbSAnLi4vdHlwaW5ncy9EYkludGVyZmFjZSc7XG5cbmltcG9ydCB7IEFnZW5jZUZhY3RvcnkgfSBmcm9tICcuL0FnZW5jZSc7XG5pbXBvcnQgeyBUZXN0RmFjdG9yeSB9IGZyb20gJy4vVGVzdCc7XG5pbXBvcnQgeyBIb3RlbEZhY3RvcnkgfSBmcm9tICcuL0hvdGVsJztcbmltcG9ydCB7IEltYWdlRmFjdG9yeSB9IGZyb20gJy4vSW1hZ2UnO1xuXG5pbXBvcnQgeyBBZXJvcG9ydEZhY3RvcnkgfSBmcm9tICcuL0Flcm9wb3J0JztcbmltcG9ydCB7IFZlaGljdWxlRmFjdG9yeSB9IGZyb20gJy4vVmVoaWN1bGUnO1xuaW1wb3J0IHsgUHJpeEZhY3RvcnkgfSBmcm9tICcuL1ByaXgnO1xuXG4vLyoqKioqKioqKioqKmFwaSByYWZhaGlhKioqKioqKioqKioqKioqKipcbmltcG9ydCB7IENsaWVudENvbXBhbnlGYWN0b3J5IH0gZnJvbSAnLi9DbGllbnRDb21wYW55JztcbmltcG9ydCB7IFRyaXBGYWN0b3J5IH0gZnJvbSAnLi9UcmlwJztcbmltcG9ydCB7IERyaXZlckZhY3RvcnkgfSBmcm9tICcuL0RyaXZlcic7XG5pbXBvcnQgeyBVc3VhbEN1c3RvbWVyRmFjdG9yeSB9IGZyb20gJy4vVXN1YWxDdXN0b21lcic7XG5pbXBvcnQgeyBQYXNzZXBvcnRGYWN0b3J5IH0gZnJvbSAnLi9QYXNzZXBvcnQnO1xuaW1wb3J0IHsgUGVyc29uYWxHcm91cEZhY3RvcnkgfSBmcm9tICcuL1BlcnNvbmFsR3JvdXAnO1xuaW1wb3J0IHsgUHJpY2VGYWN0b3J5IH0gZnJvbSAnLi9QcmljZSc7XG5pbXBvcnQgeyBWZWhpY3VsZUZsZWV0RmFjdG9yeSB9IGZyb20gJy4vVmVoaWN1bGVGbGVldCc7XG5pbXBvcnQgeyBQYXNzZW5nZXJMdWdnYWdlRmFjdG9yeSB9IGZyb20gJy4vUGFzc2VuZ2VyTHVnZ2FnZSc7XG5pbXBvcnQgeyBQcm9mb3JtYUludm9pY2VGYWN0b3J5IH0gZnJvbSAnLi9Qcm9mb3JtYUludm9pY2UnO1xuaW1wb3J0IHsgU3RvcG92ZXJGYWN0b3J5IH0gZnJvbSAnLi9TdG9wb3Zlcic7XG5pbXBvcnQgeyBUZWNobmljYWxJbnNwZWN0aW9uRmFjdG9yeSB9IGZyb20gJy4vVGVjaG5pY2FsSW5zcGVjdGlvbic7XG5pbXBvcnQgeyBWZWhpY3VsZUluc3VyYW5jZUZhY3RvcnkgfSBmcm9tICcuL1ZlaGljdWxlSW5zdXJhbmNlJztcbmltcG9ydCB7IFZlaGljdWxlTWFpbnRlbmFuY2VGYWN0b3J5IH0gZnJvbSAnLi9WZWhpY3VsZU1haW50ZW5hbmNlJztcbmltcG9ydCB7IFR2YUZhY3RvcnkgfSBmcm9tICcuL1R2YSc7XG5pbXBvcnQgeyBUcmlwRHJpdmVyRmFjdG9yeSB9IGZyb20gJy4vVHJpcERyaXZlcic7XG5pbXBvcnQgeyBUcmlwUGFzc2VuZ2VyRmFjdG9yeSB9IGZyb20gJy4vVHJpcFBhc3Nlbmdlcic7XG5pbXBvcnQgeyBUcmlwQ2xpZW50Q29tcGFueUZhY3RvcnkgfSBmcm9tICcuL1RyaXBDbGllbnRDb21wYW55JztcbmltcG9ydCB7IFRyYWRlTWFyZ2luRmFjdG9yeSB9IGZyb20gJy4vVHJhZGVNYXJnaW4nO1xuaW1wb3J0IHsgUmVudEZhY3RvcnkgfSBmcm9tICcuL1JlbnQnO1xuLy8qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiogKi9cbi8vc2MtMjYtMjAyMFxuXG4vL21hcHBhZ2Vcbi8vbWFwcGFnZVxuLy9zY3NjLTI2LTAzLTIwMjBcblxuZXhwb3J0IGNvbnN0IGNyZWF0ZU1vZGVscyA9IChzZXF1ZWxpemVDb25maWc6IGFueSk6IERiSW50ZXJmYWNlID0+IHtcbiAgY29uc3QgeyBkYXRhYmFzZSwgdXNlcm5hbWUsIHBhc3N3b3JkLCBwYXJhbXMgfSA9IHNlcXVlbGl6ZUNvbmZpZztcbiAgY29uc3Qgc2VxdWVsaXplID0gbmV3IFNlcXVlbGl6ZShkYXRhYmFzZSwgdXNlcm5hbWUsIHBhc3N3b3JkLCBwYXJhbXMpO1xuXG4gIGNvbnN0IGRiOiBEYkludGVyZmFjZSA9IHtcbiAgICBzZXF1ZWxpemUsXG4gICAgU2VxdWVsaXplLFxuXG4gICAgLy9BZ2VuY2U6IEFnZW5jZUZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIFRlc3Q6IFRlc3RGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcbiAgICBIb3RlbDogSG90ZWxGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcbiAgICBJbWFnZTogSW1hZ2VGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcblxuICAgIEFlcm9wb3J0OiBBZXJvcG9ydEZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIFZlaGljdWxlOiBWZWhpY3VsZUZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIFByaXg6IFByaXhGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcblxuICAgIC8vKioqKioqKioqKioqKioqYXBpIHJhZmFoaWEqKioqKioqKioqKioqKioqICovXG4gICAgQ2xpZW50Q29tcGFueTogQ2xpZW50Q29tcGFueUZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIFRyaXA6IFRyaXBGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcbiAgICBEcml2ZXI6IERyaXZlckZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIFVzdWFsQ3VzdG9tZXI6IFVzdWFsQ3VzdG9tZXJGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcbiAgICBQYXNzZXBvcnQ6IFBhc3NlcG9ydEZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIFBlcnNvbmFsR3JvdXA6IFBlcnNvbmFsR3JvdXBGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcbiAgICBQcmljZTogUHJpY2VGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcbiAgICBWZWhpY3VsZUZsZWV0OiBWZWhpY3VsZUZsZWV0RmFjdG9yeShzZXF1ZWxpemUsIFNlcXVlbGl6ZSksXG4gICAgUGFzc2VuZ2VyTHVnZ2FnZTogUGFzc2VuZ2VyTHVnZ2FnZUZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIFByb2Zvcm1hSW52b2ljZTogUHJvZm9ybWFJbnZvaWNlRmFjdG9yeShzZXF1ZWxpemUsIFNlcXVlbGl6ZSksXG4gICAgU3RvcG92ZXI6IFN0b3BvdmVyRmFjdG9yeShzZXF1ZWxpemUsIFNlcXVlbGl6ZSksXG4gICAgVGVjaG5pY2FsSW5zcGVjdGlvbjogVGVjaG5pY2FsSW5zcGVjdGlvbkZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIFZlaGljdWxlSW5zdXJhbmNlOiBWZWhpY3VsZUluc3VyYW5jZUZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIFZlaGljdWxlTWFpbnRlbmFuY2U6IFZlaGljdWxlTWFpbnRlbmFuY2VGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcbiAgICBUdmE6IFR2YUZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIFRyaXBEcml2ZXI6IFRyaXBEcml2ZXJGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcbiAgICBUcmlwUGFzc2VuZ2VyOiBUcmlwRHJpdmVyRmFjdG9yeShzZXF1ZWxpemUsIFNlcXVlbGl6ZSksXG4gICAgVHJpcENsaWVudENvbXBhbnk6IFRyaXBDbGllbnRDb21wYW55RmFjdG9yeShzZXF1ZWxpemUsIFNlcXVlbGl6ZSksXG4gICAgVHJhZGVNYXJnaW46IFRyYWRlTWFyZ2luRmFjdG9yeShzZXF1ZWxpemUsIFNlcXVlbGl6ZSksXG4gICAgUmVudDogUmVudEZhY3Rvcnkoc2VxdWVsaXplLCBTZXF1ZWxpemUpLFxuICAgIC8vKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiAqL1xuICB9O1xuXG4gIE9iamVjdC5rZXlzKGRiKS5mb3JFYWNoKChtb2RlbE5hbWUpID0+IHtcbiAgICBpZiAoZGJbbW9kZWxOYW1lXS5hc3NvY2lhdGUpIHtcbiAgICAgIGRiW21vZGVsTmFtZV0uYXNzb2NpYXRlKGRiKTtcbiAgICB9XG4gIH0pO1xuXG4gIHJldHVybiBkYjtcbn07XG4iXX0=

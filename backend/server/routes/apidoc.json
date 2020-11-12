@@ -1,0 +1,37 @@
+{
+  "name": "apiB2B",
+  "version": "0.3.0",
+  "description": "",
+  "title": "apiDoc apiB2B",
+  "url" : "http://192.168.1.237/apiB2B",
+
+  "order": [
+      "GetMembres",
+    "GetMembre",
+    "POSTMembre",
+	  "PUTMembre",
+	      "GetHotels",
+    "GetHotel",
+    "POSTHotel",
+	  "PUTHotel",
+	  "PUTHotelPWD",
+	 	      "GetAmenagements",
+    "GetAmenagement",
+    "POSTAmenagement",
+	  "PUTAmenagement",
+
+	      "GetHotelImages",
+    "GetHotelImage",
+    "POSTTHotelImage",
+	  "PUTHotelImage",
+    "GetRoomImages",
+    "GetRoomImage",
+    "POSTTRoomImage",
+	  "PUTRoomImage"
+	
+  ],
+  "template": {
+  	"withCompare": true,
+  	"withGenerator": true
+  }
+}

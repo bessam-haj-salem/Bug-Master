@@ -1,0 +1,23 @@
+2019-04-03T15:03:34.360956163 0.880193s notice: Recursively removing directory /var/www/html/api-jwt/rethinkdb_data/tmp
+2019-04-03T15:03:34.364174932 0.883412s notice: Initializing directory /var/www/html/api-jwt/rethinkdb_data
+2019-04-03T15:03:34.364245875 0.883482s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/var/www/html/api-jwt/rethinkdb_data' did not already exist or is empty.)
+2019-04-03T15:03:34.364264827 0.883500s notice: Running rethinkdb 2.3.6~0jessie (GCC 4.9.2)...
+2019-04-03T15:03:34.366023552 0.885260s notice: Running on Linux 4.4.35-1-pve x86_64
+2019-04-03T15:03:34.366257880 0.885494s notice: Loading data from directory /var/www/html/api-jwt/rethinkdb_data
+2019-04-03T15:03:34.423039608 0.942277s info: Automatically using cache size of 100 MB
+2019-04-03T15:03:34.423450745 0.942686s warn: Cache size is very low and may impact performance.
+2019-04-03T15:03:34.423696366 0.942932s error: TCP socket creation failed for port 29015: Address already in use.
+2019-04-03T15:42:25.362408890 0.517724s notice: Running rethinkdb 2.3.6~0jessie (GCC 4.9.2)...
+2019-04-03T15:42:25.364992204 0.520307s notice: Running on Linux 4.4.35-1-pve x86_64
+2019-04-03T15:42:25.365034363 0.520348s notice: Loading data from directory /var/www/html/api-jwt/rethinkdb_data
+2019-04-03T15:42:25.393278180 0.548593s info: Automatically using cache size of 327 MB
+2019-04-03T15:42:25.513813589 0.669127s notice: Listening for intracluster connections on port 29015
+2019-04-03T15:42:25.514282153 0.669596s notice: Listening for client driver connections on port 28015
+2019-04-03T15:42:25.514396086 0.669710s notice: Listening for administrative HTTP connections on port 8080
+2019-04-03T15:42:25.634921184 0.790235s notice: Listening on cluster addresses: 127.0.0.1, 192.168.1.237, ::1, fdc8:94bb:3610:6c00:dcfd:fbff:fe33:8496, fe80::dcfd:fbff:fe33:8496%10
+2019-04-03T15:42:25.752090608 0.907405s notice: Listening on driver addresses: 127.0.0.1, 192.168.1.237, ::1, fdc8:94bb:3610:6c00:dcfd:fbff:fe33:8496, fe80::dcfd:fbff:fe33:8496%10
+2019-04-03T15:42:25.871617066 1.026931s notice: Listening on http addresses: 127.0.0.1, 192.168.1.237, ::1, fdc8:94bb:3610:6c00:dcfd:fbff:fe33:8496, fe80::dcfd:fbff:fe33:8496%10
+2019-04-03T15:42:25.871621486 1.026935s notice: Server ready, "WEB_oam" c6025726-0bc5-493c-9768-500ddc94e52f
+2019-04-03T15:43:47.004082601 82.159396s info: Table 68384616-5f1b-4233-8d79-bd8ae80f7c78: Starting a new Raft election for term 1.
+2019-04-03T15:43:47.004358232 82.159686s info: Table 68384616-5f1b-4233-8d79-bd8ae80f7c78: Added replica on this server.
+2019-04-03T15:43:47.021074079 82.176388s info: Table 68384616-5f1b-4233-8d79-bd8ae80f7c78: This server is Raft leader for term 1. Latest log index is 0.

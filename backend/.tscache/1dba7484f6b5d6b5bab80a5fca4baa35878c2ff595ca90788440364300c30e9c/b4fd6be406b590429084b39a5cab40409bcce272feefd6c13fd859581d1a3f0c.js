@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createModels = void 0;
+const sequelize_1 = require("sequelize");
+const Project_1 = require("./Project");
+const Issues_1 = require("./Issues");
+const Members_1 = require("./Members");
+exports.createModels = (sequelizeConfig) => {
+    const { database, username, password, params } = sequelizeConfig;
+    const sequelize = new sequelize_1.Sequelize(database, username, password, params);
+    const db = {
+        sequelize,
+        Sequelize: sequelize_1.Sequelize,
+        Project: Project_1.ProjectFactory(sequelize, sequelize_1.Sequelize),
+        Issues: Issues_1.IssuesFactory(sequelize, sequelize_1.Sequelize),
+        Members: Members_1.MembersFactory(sequelize, sequelize_1.Sequelize),
+    };
+    Object.keys(db).forEach((modelName) => {
+        if (db[modelName].associate) {
+            db[modelName].associate(db);
+        }
+    });
+    return db;
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiL2hvbWUvYmFzc2VtL0RvY3VtZW50cy9QZXJzb25uZWxfUHJvamVjdC9idWctbWFzdGVyL2JhY2tlbmQvc2VydmVyL21vZGVscy10cy9pbmRleC50cyIsInNvdXJjZXMiOlsiL2hvbWUvYmFzc2VtL0RvY3VtZW50cy9QZXJzb25uZWxfUHJvamVjdC9idWctbWFzdGVyL2JhY2tlbmQvc2VydmVyL21vZGVscy10cy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSx5Q0FBc0M7QUFFdEMsdUNBQTJDO0FBQzNDLHFDQUF5QztBQUN6Qyx1Q0FBMkM7QUFFOUIsUUFBQSxZQUFZLEdBQUcsQ0FBQyxlQUFvQixFQUFlLEVBQUU7SUFDaEUsTUFBTSxFQUFFLFFBQVEsRUFBRSxRQUFRLEVBQUUsUUFBUSxFQUFFLE1BQU0sRUFBRSxHQUFHLGVBQWUsQ0FBQztJQUNqRSxNQUFNLFNBQVMsR0FBRyxJQUFJLHFCQUFTLENBQUMsUUFBUSxFQUFFLFFBQVEsRUFBRSxRQUFRLEVBQUUsTUFBTSxDQUFDLENBQUM7SUFFdEUsTUFBTSxFQUFFLEdBQWdCO1FBQ3RCLFNBQVM7UUFDVCxTQUFTLEVBQVQscUJBQVM7UUFDVCxPQUFPLEVBQUUsd0JBQWMsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUM3QyxNQUFNLEVBQUUsc0JBQWEsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztRQUMzQyxPQUFPLEVBQUUsd0JBQWMsQ0FBQyxTQUFTLEVBQUUscUJBQVMsQ0FBQztLQUU5QyxDQUFDO0lBRUYsTUFBTSxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsQ0FBQyxPQUFPLENBQUMsQ0FBQyxTQUFTLEVBQUUsRUFBRTtRQUNwQyxJQUFJLEVBQUUsQ0FBQyxTQUFTLENBQUMsQ0FBQyxTQUFTLEVBQUU7WUFDM0IsRUFBRSxDQUFDLFNBQVMsQ0FBQyxDQUFDLFNBQVMsQ0FBQyxFQUFFLENBQUMsQ0FBQztTQUM3QjtJQUNILENBQUMsQ0FBQyxDQUFDO0lBRUgsT0FBTyxFQUFFLENBQUM7QUFDWixDQUFDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBTZXF1ZWxpemUgfSBmcm9tICdzZXF1ZWxpemUnO1xuaW1wb3J0IHsgRGJJbnRlcmZhY2UgfSBmcm9tICcuLi90eXBpbmdzL0RiSW50ZXJmYWNlJztcbmltcG9ydCB7IFByb2plY3RGYWN0b3J5IH0gZnJvbSAnLi9Qcm9qZWN0JztcbmltcG9ydCB7IElzc3Vlc0ZhY3RvcnkgfSBmcm9tICcuL0lzc3Vlcyc7XG5pbXBvcnQgeyBNZW1iZXJzRmFjdG9yeSB9IGZyb20gJy4vTWVtYmVycyc7XG5pbXBvcnQgeyBNZW1iZXJzUHJvamVjdEZhY3RvcnkgfSBmcm9tICcuL01lbWJlcnNQcm9qZWN0JztcbmV4cG9ydCBjb25zdCBjcmVhdGVNb2RlbHMgPSAoc2VxdWVsaXplQ29uZmlnOiBhbnkpOiBEYkludGVyZmFjZSA9PiB7XG4gIGNvbnN0IHsgZGF0YWJhc2UsIHVzZXJuYW1lLCBwYXNzd29yZCwgcGFyYW1zIH0gPSBzZXF1ZWxpemVDb25maWc7XG4gIGNvbnN0IHNlcXVlbGl6ZSA9IG5ldyBTZXF1ZWxpemUoZGF0YWJhc2UsIHVzZXJuYW1lLCBwYXNzd29yZCwgcGFyYW1zKTtcblxuICBjb25zdCBkYjogRGJJbnRlcmZhY2UgPSB7XG4gICAgc2VxdWVsaXplLFxuICAgIFNlcXVlbGl6ZSxcbiAgICBQcm9qZWN0OiBQcm9qZWN0RmFjdG9yeShzZXF1ZWxpemUsIFNlcXVlbGl6ZSksXG4gICAgSXNzdWVzOiBJc3N1ZXNGYWN0b3J5KHNlcXVlbGl6ZSwgU2VxdWVsaXplKSxcbiAgICBNZW1iZXJzOiBNZW1iZXJzRmFjdG9yeShzZXF1ZWxpemUsIFNlcXVlbGl6ZSksXG4gICAgXG4gIH07XG5cbiAgT2JqZWN0LmtleXMoZGIpLmZvckVhY2goKG1vZGVsTmFtZSkgPT4ge1xuICAgIGlmIChkYlttb2RlbE5hbWVdLmFzc29jaWF0ZSkge1xuICAgICAgZGJbbW9kZWxOYW1lXS5hc3NvY2lhdGUoZGIpO1xuICAgIH1cbiAgfSk7XG5cbiAgcmV0dXJuIGRiO1xufTtcbiJdfQ==

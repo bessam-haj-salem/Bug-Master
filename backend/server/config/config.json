@@ -1,0 +1,11 @@
+{
+  "development": {
+    "database": "bessamDB",
+    "username": "karim",
+    "password": "tgbyhnuj",
+    "params": {
+      "host": "localhost",
+      "dialect": "mysql"
+    }
+  }
+}
