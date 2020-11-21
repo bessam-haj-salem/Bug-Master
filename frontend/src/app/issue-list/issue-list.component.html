@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Issues</h2>
+    <div class="list-group">
+      <button
+        class="list-group-item"
+        *ngFor="let issue of issues; let i = index"
+        (click)="onViewIssue(i)"
+      >
+        <h3 class="list-group-item-heading">
+          {{ issue.subject }}
+          <button
+            class="btn btn-default pull-right"
+            (click)="onDeleteIssue(issue)"
+          >
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+        </h3>
+
+        <p class="list-group-item-text">{{ issue.description }}</p>
+      </button>
+    </div>
+    <button class="btn btn-primary" (click)="onNewIssue()">New Issue</button>
+  </div>
+</div>

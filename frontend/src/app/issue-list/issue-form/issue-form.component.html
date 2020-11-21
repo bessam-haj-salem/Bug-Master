@@ -1,0 +1,139 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h2>Save new issue</h2>
+    <form [formGroup]="issueForm" (ngSubmit)="onSaveIssue()">
+      <div class="form-group">
+        <label for="subject">Categorie</label>
+        <select class="form-control" id="categorie" formControlName="categorie">
+          <option value="Feature">Feature</option>
+          <option value="Bug">Bug</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="subject">subject</label>
+        <input
+          type="text"
+          class="form-control"
+          id="subject"
+          formControlName="subject"
+          spellcheck="false"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">description</label>
+        <textarea
+          class="form-control"
+          id="description"
+          rows="3"
+          formControlName="description"
+          spellcheck="false"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="status">status</label>
+        <select class="form-control" id="status" formControlName="status">
+          <option value="New">New</option>
+          <option value="In progress">In progress</option>
+          <option value="Resolved">Resolved</option>
+          <option value="Feed back">Feed back</option>
+          <option value="closed">closed</option>
+          <option value="rejected">rejected</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="priority">priority</label>
+        <select class="form-control" id="priority" formControlName="priority">
+          <option value="Low">Low</option>
+          <option value="Normal">Normal</option>
+          <option value="High">High</option>
+          <option value="Urgent">Urgent</option>
+          <option value="Immediate">Immediate</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="start_date">start_date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="start_date"
+          formControlName="start_date"
+          spellcheck="false"
+        />
+      </div>
+      <div class="form-group">
+        <label for="due_date">due_date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="due_date"
+          formControlName="due_date"
+          spellcheck="false"
+        />
+      </div>
+      <div class="form-group">
+        <label for="estimated_time">estimated_time</label>
+        <input
+          type="text"
+          class="form-control"
+          id="estimated_time"
+          formControlName="estimated_time"
+          spellcheck="false"
+        />
+      </div>
+      <div class="form-group">
+        <label for="progress">progress</label>
+        <input
+          type="text"
+          class="form-control"
+          id="progress"
+          formControlName="progress"
+          spellcheck="false"
+        />
+      </div>
+      <div class="form-group">
+        <label for="spent_time">spent_time</label>
+        <input
+          type="text"
+          class="form-control"
+          id="spent_time"
+          formControlName="spent_time"
+          spellcheck="false"
+        />
+      </div>
+      <div class="form-group">
+        <label for="activity">activity</label>
+        <select class="form-control" id="activity" formControlName="activity">
+          <option value="Development">Development</option>
+          <option value="Design">Design</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="updated_by">updated_by</label>
+        <input
+          type="text"
+          class="form-control"
+          id="updated_by"
+          formControlName="updated_by"
+          spellcheck="false"
+        />
+      </div>
+      <div class="form-group">
+        <label for="links">links</label>
+        <input
+          type="text"
+          class="form-control"
+          id="links"
+          formControlName="links"
+          spellcheck="false"
+        />
+      </div>
+      <button
+        class="btn btn-success"
+        [disabled]="issueForm.invalid"
+        type="submit"
+      >
+        Save
+      </button>
+    </form>
+  </div>
+</div>

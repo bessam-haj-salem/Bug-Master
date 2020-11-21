@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ issue.subject }}</h1>
+    <br />
+    <h3><span>The categorie</span> of the issue is {{ issue.categorie }}</h3>
+    <h3>Description</h3>
+    <p class="list-group-item text">{{ issue.description }}</p>
+    <h3>The <span>status</span> is {{ issue.status }}</h3>
+    <h3>The <span>priority</span> is {{ issue.priority }}</h3>
+    <h3>The <span>start date</span> is : {{ issue.start_date }}</h3>
+    <h3>The <span>due date</span> is : {{ issue.due_date }}</h3>
+    <h3>
+      The <span>estimated time</span> to resolve it is
+      {{ issue.estimated_time }} hour
+    </h3>
+    <h3>The <span>progress</span> is {{ issue.progress }}%</h3>
+    <h3>The <span>Link</span> to resolve it is: {{ issue.links }}</h3>
+    <button class="btn btn-default" (click)="onBack()">Back</button>
+  </div>
+</div>
