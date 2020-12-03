@@ -1,0 +1,48 @@
+<form [formGroup]="messageForm" (ngSubmit)="onSaveMessage()">
+  <p>
+    <input
+      id="name"
+      class="w3-input w3-padding-16"
+      type="text"
+      placeholder="Name"
+      formControlName="name"
+    />
+  </p>
+  <p>
+    <input
+      id="email"
+      class="w3-input w3-padding-16"
+      type="text"
+      placeholder="Email"
+      formControlName="email"
+    />
+  </p>
+  <p>
+    <input
+      id="subject"
+      class="w3-input w3-padding-16"
+      type="text"
+      placeholder="Subject"
+      formControlName="subject"
+    />
+  </p>
+  <p>
+    <input
+      id="content"
+      class="w3-input w3-padding-16"
+      type="text"
+      placeholder="Message"
+      formControlName="content"
+    />
+  </p>
+  <p>
+    <button
+      class="w3-button w3-light-grey w3-padding-large"
+      [disabled]="messageForm.invalid"
+      type="submit"
+     
+    >
+      <i class="fa fa-paper-plane"></i> SEND MESSAGE
+    </button>
+  </p>
+</form>

@@ -24,6 +24,11 @@ import { HomeComponent } from './home/home.component';
 import { PasswordLessComponent } from './auth/password-less/password-less.component';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageFormComponent } from './messages/message-form/message-form.component';
+import { SingleMessageComponent } from './messages/single-message/single-message.component';
+import { MessagesService } from './services/messages.service';
+import { AnimationTitleComponent } from './animation-title/animation-title.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     HomeComponent,
     PasswordLessComponent,
-    MatConfirmDialogComponent
+    MatConfirmDialogComponent,
+    MessagesComponent,
+    MessageFormComponent,
+    SingleMessageComponent,
+    AnimationTitleComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +59,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [AuthService, ProjectsService, IssuesService, AuthguardService],
+  providers: [
+    AuthService,
+    ProjectsService,
+    IssuesService,
+    AuthguardService,
+    MessagesService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [MatConfirmDialogComponent]
 })

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Messages</h2>
+    <div class="list-group" *ngFor="let message of messages; let i = index">
+      <button class="list-group-item" (click)="onViewMessage(i)">
+        <h3 class="list-group-item-heading">
+          {{ message.subject }}
+        </h3>
+
+        <p class="list-group-item-text">{{ message.content }}</p>
+        <button
+        class="btn btn-default pull-right"
+        (click)="onDeleteMessage(message)"
+        matTooltip="Delete"
+      >
+        <span class="glyphicon glyphicon-minus"></span>
+      </button>
+      </button>
+     
+    </div>
+    <!-- <button class="btn btn-primary" (click)="onNewMessage()">New message</button> -->
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ message.name }}</h1>
+    <br />
+    <h3><span>The name</span> of the person is {{ message.name }}</h3>
+    <h3>The <span>subject</span> is {{ message.subject }}</h3>
+    <h3>The <span>email</span> is {{ message.email }}</h3>
+    <h3>Message :</h3>
+    <p class="list-group-item text">{{ message.content }}</p>
+
+    <button class="btn btn-primary" (click)="onBack()">Back</button>
+  </div>
+</div>

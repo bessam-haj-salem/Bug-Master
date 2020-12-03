@@ -17,6 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { PasswordLessComponent } from './auth/password-less/password-less.component';
+import { MessagesComponent } from './messages/messages.component';
+import { SingleMessageComponent } from './messages/single-message/single-message.component';
 
 const routes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
@@ -27,6 +29,7 @@ const routes: Routes = [
     canActivate: [AuthguardService],
     component: ProjectListComponent
   },
+
   { path: 'home', component: HomeComponent },
   {
     path: 'projects/new',
@@ -52,6 +55,16 @@ const routes: Routes = [
     path: 'issues/view/:id',
     canActivate: [AuthguardService],
     component: SingleIssueComponent
+  },
+  {
+    path: 'messages',
+    canActivate: [AuthguardService],
+    component: MessagesComponent
+  },
+  {
+    path: 'messages/view/:id',
+    canActivate: [AuthguardService],
+    component: SingleMessageComponent
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' }

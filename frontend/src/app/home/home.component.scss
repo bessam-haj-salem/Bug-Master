@@ -7,9 +7,11 @@
   animation: type 3s steps(12); 
    overflow: hidden;
    white-space: nowrap;
-   line-height: 73px ;
-  width:22ch;
+   line-height: 73px ; 
  
+}
+h2 {
+  color: #cccc00
 }
 
 @keyframes type {
@@ -23,8 +25,10 @@
 .text{
     font-size: 18px
 }
-h3 {
-    font-weight:bold;
+
+.letter {
+  font-weight: bolder;
+  font-size:16px
 }
 
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
@@ -34,11 +38,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
 #main {margin-left: 120px}
 /* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+@media only screen and (max-width: 1000px) {#main {margin-left: 100px}}
 
 //text expands:
 h3 {
     display: inline;
+    //justify-content: center;
   }
   h3:after {
     width: 0px;
@@ -65,3 +70,5 @@ h3 {
   .extend:hover h3:nth-child(3):after {
     width: 25px;
   }
+
+  
