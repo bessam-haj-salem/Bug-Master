@@ -1,59 +1,10 @@
-<!-- <nav class="navbar navbar-default navbar-inverse">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li routerLinkActive="active" *ngIf="!isAuth">
-        <a class="navbar-brand" routerLink="home">Home</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav">
-      <li routerLinkActive="active" *ngIf="!isAuth">
-        <a class="link" routerLink="overview">Overview Projects</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav">
-      <li routerLinkActive="active" *ngIf="isAuth">
-        <a class="link" routerLink="projects">Projects</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav">
-      <li routerLinkActive="active" *ngIf="isAuth">
-        <a class="link" routerLink="issues">Issues</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li routerLinkActive="active" *ngIf="!isAuth">
-        <a class="link" routerLink="auth/signup">Sign up</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li routerLinkActive="active" *ngIf="!isAuth">
-        <a class="link" routerLink="auth/signin">Login</a>
-      </li>
-      <li>
-        <a
-          class="link"
-          (click)="onSignout()"
-          *ngIf="isAuth"
-          style="cursor: pointer"
-          >Sign out</a
-        >
-      </li>
-      <li routerLinkActive="active">
-        <a routerLink="auth/passwordLess" *ngIf="!isAuth" class="link"
-          >Forget Password</a
-        >
-      </li>
-    </ul>
-  </div>
-</nav> -->
-
 <div class="w3-black">
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Avatar image in top left corner -->
     <img src="../../assets/images/badbunny.jpg" style="width:100%" />
 
     <a
-      routerLink="home"
+      routerLink="home"     
       class="w3-bar-item w3-button w3-padding-large w3-black"
       *ngIf="!isAuth"
     >
@@ -63,7 +14,8 @@
           'w3-xxlarge w3-spin fa fa-home': !isAuth
         }"
       ></i>
-      <p >HOME</p>
+      
+      <p>HOME</p>
     </a>
     <a
       routerLink="projects"

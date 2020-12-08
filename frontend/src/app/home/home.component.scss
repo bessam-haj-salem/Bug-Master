@@ -22,8 +22,19 @@ h2 {
         width: 20ch;
     }
 }
+.tex {background:url(../../assets/images/bg4.jpg);
+border-radius: 10px}
 .text{
-    font-size: 18px
+    font-size: 18px;
+    color: rgb(245, 233, 233);
+    line-height: 3rem;
+    font-family: 'Signika';
+    margin: 10px;
+    padding: 27px
+
+    
+
+
 }
 
 .letter {
@@ -36,13 +47,17 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 /* Set the width of the sidebar to 120px */
 .w3-sidebar {width: 120px;background: #222;}
 /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
+#main {margin-left: 120px;
+
+}
+
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 1000px) {#main {margin-left: 100px}}
 
 //text expands:
 h3 {
     display: inline;
+    color: #736A62
     //justify-content: center;
   }
   h3:after {
@@ -70,5 +85,14 @@ h3 {
   .extend:hover h3:nth-child(3):after {
     width: 25px;
   }
+  .container {
+    margin-top: -100px
+  }
 
-  
+  .row {
+   
+  background:url(../../assets/images/bg6.jpg);
+  }
+  .w3-image {
+    margin-left: 800px
+  }
